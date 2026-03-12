@@ -1,0 +1,79 @@
+{
+  "last_run": {
+    "run_id": "run_1773293662114",
+    "created_at": "2026-03-12T05:34:22.197Z",
+    "parent_event_id": "evt_1773290741694",
+    "selected_gene_id": "gene_gep_innovate_from_opportunity",
+    "selected_capsule_id": "capsule_1773290741694",
+    "selector": {
+      "selected": "gene_gep_innovate_from_opportunity",
+      "reason": [
+        "signals match gene.signals_match",
+        "capsule trigger matches signals",
+        "signals: stable_success_plateau",
+        "memory_graph: memory_prefer:gene_gep_innovate_from_opportunity | gene_prior:0.667",
+        "drift_intensity: 0.577"
+      ],
+      "alternatives": []
+    },
+    "signals": [
+      "stable_success_plateau"
+    ],
+    "mutation": {
+      "type": "Mutation",
+      "id": "mut_1773293662111",
+      "category": "innovate",
+      "trigger_signals": [
+        "stable_success_plateau"
+      ],
+      "target": "gene:gene_gep_innovate_from_opportunity",
+      "expected_effect": "explore new strategy combinations to escape local optimum",
+      "risk_level": "medium"
+    },
+    "mutation_id": "mut_1773293662111",
+    "personality_state": {
+      "type": "PersonalityState",
+      "rigor": 0.7,
+      "creativity": 0.35,
+      "verbosity": 0.25,
+      "risk_tolerance": 0.4,
+      "obedience": 0.85
+    },
+    "personality_key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+    "personality_known": true,
+    "personality_mutations": [],
+    "drift": false,
+    "selected_by": "memory_graph+selector",
+    "source_type": "generated",
+    "reused_asset_id": null,
+    "reused_source_node": null,
+    "reused_chain_id": null,
+    "baseline_untracked": [
+      "assets/gep/failed_capsules.json",
+      "assets/gep/genes.jsonl",
+      "logs/status_20260312.json"
+    ],
+    "baseline_git_head": "016b19f54d072e3c1a9df883bf11a06fd9fb11e4",
+    "blast_radius_estimate": {
+      "files": 25,
+      "lines": 2000
+    },
+    "active_task_id": null,
+    "active_task_title": null,
+    "worker_assignment_id": null,
+    "worker_pending": false,
+    "commitment_deadline": null,
+    "applied_lessons": [],
+    "hub_lessons": []
+  },
+  "last_solidify": {
+    "run_id": "run_1773290643032",
+    "at": "2026-03-12T04:45:41.694Z",
+    "event_id": "evt_1773290741694",
+    "capsule_id": "capsule_1773290741694",
+    "outcome": {
+      "status": "success",
+      "score": 0.85
+    }
+  }
+}

@@ -4,6 +4,18 @@
     "xiucheng-self-improving-agent": {
       "version": "1.0.0",
       "installedAt": 1773240176059
+    },
+    "memory-core": {
+      "version": "0.1.3",
+      "installedAt": 1773280436682
+    },
+    "feishu-evolver-wrapper": {
+      "version": "1.7.1",
+      "installedAt": 1773290639975
+    },
+    "self-improving-agent": {
+      "version": "3.0.1",
+      "installedAt": 1773292691025
     }
   }
 }
