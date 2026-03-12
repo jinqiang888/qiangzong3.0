@@ -16,6 +16,14 @@
     "self-improving-agent": {
       "version": "3.0.1",
       "installedAt": 1773292691025
+    },
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1773299221897
+    },
+    "find-skill": {
+      "version": "1.0.0",
+      "installedAt": 1773299614957
     }
   }
 }
