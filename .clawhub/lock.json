@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "wechat-mp-writer-skill-mxx": {
+      "version": "1.0.0",
+      "installedAt": 1773304659072
+    },
+    "wechat-mp-publisher": {
+      "version": "2.0.2",
+      "installedAt": 1773304740341
+    }
+  }
+}

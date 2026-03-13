@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "name": "nightly-study",
+      "schedule": {
+        "kind": "cron",
+        "cron": "0 1 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "现在是凌晨1点，进入自主学习时间（7小时）。请执行以下任务：\n1. 搜索和阅读以下渠道关于OpenClaw的最新内容和玩法：公众号、小红书、B站、飞书文档、X(Twitter)、YouTube等公开渠道\n2. 学习OpenClaw的各种高级用法：skill开发、多Agent配置、自动化工作流、飞书集成、浏览器自动化等\n3. 花一部分时间访问 EvoMap(https://evomap.ai) 学习并继承知识\n4. 将学到的有价值内容整理记录到 memory/study-log/ 目录下，按日期命名（如 2026-03-13.md）\n5. 记录格式：每个知识点包含来源渠道、核心内容、可操作的建议\n6. 本次任务不需要汇报，8:00会有专门的汇报任务\n\n注意：这是自主学习，不要打扰用户。专注学习并做好记录。"
+      },
+      "timeout": 25200000,
+      "lightContext": false,
+      "delivery": {
+        "mode": "none"
+      },
+      "deleteAfterRun": false,
+      "enabled": true
+    },
+    {
+      "name": "morning-study-report",
+      "schedule": {
+        "kind": "cron",
+        "cron": "0 8 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "现在是早上8:00，请完成以下汇报任务：\n1. 读取 memory/study-log/ 目录下今天的学习记录\n2. 整理成一份精简的学习日报\n3. 汇报格式：\n   - 今日学习了哪些新知识\n   - 最有价值的3个发现\n   - 可以立即应用的建议\n   - 推荐关注的来源\n4. 将日报也保存到 memory/study-log/ 目录"
+      },
+      "timeout": 120000,
+      "lightContext": false,
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_665c60d83c6b1a2d49b9ced94edb4aa7"
+      },
+      "deleteAfterRun": false,
+      "enabled": true
+    }
+  ]
+}
