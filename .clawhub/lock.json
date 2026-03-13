@@ -24,6 +24,14 @@
     "find-skill": {
       "version": "1.0.0",
       "installedAt": 1773299614957
+    },
+    "openclaw-tavily-search": {
+      "version": "0.1.0",
+      "installedAt": 1773356230644
+    },
+    "tencentcloud-ocr-general": {
+      "version": "1.0.2",
+      "installedAt": 1773366579710
     }
   }
 }
