@@ -7,17 +7,27 @@
 
 ---
 
+## ⚠️ 安全红线
+- **服务器绝对不能暴露在外网！**
+- Gateway 绑定 loopback (127.0.0.1)
+- 防火墙不开端口
+- 任何涉及网络暴露的操作必须先征求用户同意
+
+---
+
 ## 🔧 系统配置
 1. **Git配置**：
    - 用户名：jinqiang888
    - 邮箱：huangjinqinag999@gmail.com
    - SSH公钥：ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPUGY43ws89XAJmnSPKGhwtmn9ZSdc1KV1mPrN7j0Dou github@example.com
    - 备份仓库：jinqiang888/qiangzong3.0 (已完成首次全量备份 2026-03-12)
+   - 自动备份：每天 3:00 AM → GitHub jinqiang888/qiangzong3.0
 
 2. **飞书配置**：
    - 已开启流式输出（channels.feishu.streaming = true）
    - 已开启消息底部耗时显示（channels.feishu.footer.elapsed = true）
    - 已开启消息底部状态展示（channels.feishu.footer.status = true）
+   - 飞书 open_id：ou_665c60d83c6b1a2d49b9ced94edb4aa7
 
 3. **搜索配置**：
    - 已安装Tavily搜索技能，API密钥已配置完成
@@ -26,15 +36,21 @@
 4. **网络配置**：
    - 待配置代理地址，支持自动切换国内外网络，解决GitHub/HuggingFace等站点访问问题
 
-5. **OpenClaw版本**：2026.3.8 (3caab92)
-6. **默认模型**：volcengine-plan/ark-code-latest
-7. **Gateway服务**：已配置为系统服务，开机自动启动，RPC探针连接正常 (2026-03-12)
+5. **OpenClaw版本**：2026.3.12
+6. **默认模型**：volcengine-plan/ark-code-latest / zai/zai_pony-alpha-2
+7. **Embedding**：OpenAI text-embedding-3-small
+8. **Gateway服务**：
+   - 已配置为系统服务，开机自动启动
+   - 端口：18788
+   - RPC探针连接正常 (2026-03-12)
 
 ---
 
 ## 📝 用户信息
 - 用户名：jinqiang888
 - GitHub邮箱：huangjinqinag999@gmail.com
+- 称呼：暂未填写
+- 时区：Asia/Shanghai
 
 ---
 
@@ -51,6 +67,8 @@
    - 60+技能清单梳理完成
    - 模型切换和阿里云百炼配置指南整理完成
 
+3. ✅ 记忆系统采用三层架构（会话/文件/语义搜索）
+
 ---
 
 ## 📌 待办事项
@@ -66,6 +84,7 @@
 1. **杜绝重复造轮子**：遇到重复的工作流，主动将其打包成可复用的技能，避免重复劳动
 2. **优先复用现有能力**：处理任务前先检查已有技能和工具，能用现有能力解决的绝不重新开发
 3. **代码可复用性优先**：编写代码和工作流时考虑通用性，方便后续复用
+4. **命令用代码块格式，方便一键复制**
 
 ---
 
@@ -104,3 +123,5 @@
 4. 配置文件不兼容的字段需要先移除再重启，否则会启动失败
 5. **绝对禁止模拟执行任务**：所有用户要求的操作必须真实落地执行，禁止只回复不干活的假执行，发现一次记一次大过
 6. **大文件/模型下载策略**：国内网络环境下优先提供直接下载链接，让用户用浏览器/迅雷等工具下载，避免在命令行下折腾被墙的站点，浪费时间
+7. 换端口时要注意配置文件（openclaw.json）和服务脚本（gateway.cmd）两处都要改
+8. AutoClaw 的端口是桌面应用管理的，不能通过命令行直接改

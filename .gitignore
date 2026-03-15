@@ -1,0 +1,9 @@
+# Auto-generated
+openclaw.json
+openclaw.json.bak
+gateway.cmd
+
+# Large binaries
+*.exe
+*.dll
+*.node

@@ -1,6 +1,7 @@
 {
   "version": 1,
   "skills": {
+<<<<<<< HEAD
     "xiucheng-self-improving-agent": {
       "version": "1.0.0",
       "installedAt": 1773240176059
@@ -32,6 +33,15 @@
     "tencentcloud-ocr-general": {
       "version": "1.0.2",
       "installedAt": 1773366579710
+=======
+    "wechat-mp-writer-skill-mxx": {
+      "version": "1.0.0",
+      "installedAt": 1773304659072
+    },
+    "wechat-mp-publisher": {
+      "version": "2.0.2",
+      "installedAt": 1773304740341
+>>>>>>> qiangzong2.0/master
     }
   }
 }
