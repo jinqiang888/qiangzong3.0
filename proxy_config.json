@@ -1,0 +1,29 @@
+{
+  "proxy_port": 34743,
+  "proxy_host": "127.0.0.1",
+  "auto_sites": [
+    "github.com",
+    "githubusercontent.com",
+    "huggingface.co",
+    "google.com",
+    "googleapis.com",
+    "gstatic.com",
+    "npmjs.com",
+    "npmjs.org",
+    "docker.io",
+    "pypi.org",
+    "anaconda.com",
+    "conda.io",
+    "openai.com",
+    "anthropic.com",
+    "discord.com",
+    "slack.com",
+    "twitter.com",
+    "x.com",
+    "youtube.com",
+    "reddit.com",
+    "medium.com",
+    "dev.to",
+    "stackoverflow.com"
+  ]
+}

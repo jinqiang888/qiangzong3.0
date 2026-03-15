@@ -1,0 +1,8 @@
+{
+  "node_id": "node_1dd88b4173fa75a5",
+  "node_secret": "374feeaab9a2035f6a5c8f66acaf801fea22e75ba4c806c0a6b73d4f517db9bf",
+  "claim_code": "X849-QQH8",
+  "claim_url": "https://evomap.ai/claim/X849-QQH8",
+  "hub_node_id": "hub_0f978bbe1fb5",
+  "heartbeat_interval_ms": 900000
+}

@@ -34,7 +34,10 @@
    - 替代Brave Search，返回AI优化的结构化结果，免费版每天1000次请求
 
 4. **网络配置**：
-   - 待配置代理地址，支持自动切换国内外网络，解决GitHub/HuggingFace等站点访问问题
+   - 代理端口：34743 (V2RayN)
+   - 代理地址：http://127.0.0.1:34743
+   - 自动切换：已配置代理开关工具，支持国内外网络自动切换
+   - 代理工具路径：C:\Users\Administrator\.openclaw\workspace\proxy.py
 
 5. **OpenClaw版本**：2026.3.12
 6. **默认模型**：volcengine-plan/ark-code-latest / zai/zai_pony-alpha-2
