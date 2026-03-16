@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 import json
 import os
+import sys
 from datetime import datetime
 from typing import List, Dict
+
+# 设置UTF-8编码解决Windows emoji输出问题
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+if sys.stderr.encoding != 'utf-8':
+    sys.stderr.reconfigure(encoding='utf-8')
+
 
 class TopicPlannerAgent:
     def __init__(self, config_path: str = "topic_planner_config.json"):
@@ -38,8 +46,8 @@ class TopicPlannerAgent:
             }
         }
         
-        if os.path.exists(config_path):
-            with open(config_path, "r", encoding="utf-8") as f:
+        if os.path.exists(self.config_path):
+            with open(self.config_path, "r", encoding="utf-8") as f:
                 return {**default_config, **json.load(f)}
         return default_config
     

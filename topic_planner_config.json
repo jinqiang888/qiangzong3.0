@@ -1,0 +1,29 @@
+{
+  "name": "强策划 - 创始人IP选题Agent",
+  "model": "volcengine-plan/ark-code-latest",
+  "skills": [
+    "autoglm-websearch",
+    "autoglm-deepresearch",
+    "seo-content-writer",
+    "xiaohongshu",
+    "social-content"
+  ],
+  "rules": [
+    "每天上午9点自动输出3-5个选题建议",
+    "选题必须结合当前热点和业务方向",
+    "每个选题必须附带推荐角度和至少2个参考案例链接",
+    "每周一输出上周热点总结和下周选题方向",
+    "所有选题必须符合目标人群画像，禁止输出无关内容"
+  ],
+  "business_info": {
+    "product": "创始人IP打造 + AI短视频获客策划",
+    "target_audience": "B端企业主、创始人、CEO、想做IP的创业者",
+    "core_business": "帮助创始人通过短视频打造个人IP，实现高效获客，提供定制化爆款选题和脚本",
+    "content_platforms": [
+      "抖音",
+      "小红书",
+      "视频号",
+      "公众号"
+    ]
+  }
+}

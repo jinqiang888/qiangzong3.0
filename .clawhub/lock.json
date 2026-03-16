@@ -1,47 +1,13 @@
 {
   "version": 1,
   "skills": {
-<<<<<<< HEAD
-    "xiucheng-self-improving-agent": {
-      "version": "1.0.0",
-      "installedAt": 1773240176059
-    },
-    "memory-core": {
-      "version": "0.1.3",
-      "installedAt": 1773280436682
+    "evolver": {
+      "version": "1.29.9",
+      "installedAt": 1773631053217
     },
     "feishu-evolver-wrapper": {
       "version": "1.7.1",
-      "installedAt": 1773290639975
-    },
-    "self-improving-agent": {
-      "version": "3.0.1",
-      "installedAt": 1773292691025
-    },
-    "skill-vetter": {
-      "version": "1.0.0",
-      "installedAt": 1773299221897
-    },
-    "find-skill": {
-      "version": "1.0.0",
-      "installedAt": 1773299614957
-    },
-    "openclaw-tavily-search": {
-      "version": "0.1.0",
-      "installedAt": 1773356230644
-    },
-    "tencentcloud-ocr-general": {
-      "version": "1.0.2",
-      "installedAt": 1773366579710
-=======
-    "wechat-mp-writer-skill-mxx": {
-      "version": "1.0.0",
-      "installedAt": 1773304659072
-    },
-    "wechat-mp-publisher": {
-      "version": "2.0.2",
-      "installedAt": 1773304740341
->>>>>>> qiangzong2.0/master
+      "installedAt": 1773631057639
     }
   }
 }
