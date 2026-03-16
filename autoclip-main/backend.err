@@ -1,0 +1,15 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\Administrator\\.openclaw\\workspace\\autoclip-main']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [152516] using WatchFiles
+2026-03-16 20:21:35,630 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2026-03-16 20:21:36,633 - backend.utils.speech_recognizer - WARNING - bcut-asr未安装，将跳过bcut-asr方法
+C:\Users\Administrator\.openclaw\workspace\autoclip-main\backend\utils\subtitle_processor.py:16: SyntaxWarning: invalid escape sequence '\s'
+  self.word_separators = r'[，。！？；：""''（）【】、\s]+'
+2026-03-16 20:21:36,769 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+INFO:     Started server process [164208]
+INFO:     Waiting for application startup.
+2026-03-16 20:21:36,939 - backend.main - INFO - 启动AutoClip API服务...
+2026-03-16 20:21:36,947 - backend.main - INFO - 数据库表创建完成
+2026-03-16 20:21:36,947 - backend.main - INFO - API密钥已加载到环境变量
+2026-03-16 20:21:36,947 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+INFO:     Application startup complete.

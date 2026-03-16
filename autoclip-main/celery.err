@@ -1,0 +1,24 @@
+[2026-03-16 20:22:30,841: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2026-03-16 20:22:30,870: INFO/MainProcess] mingle: searching for neighbors
+[2026-03-16 20:22:31,166: INFO/SpawnPoolWorker-5] child process 164892 calling self.run()
+[2026-03-16 20:22:31,166: INFO/SpawnPoolWorker-7] child process 165972 calling self.run()
+[2026-03-16 20:22:31,167: INFO/SpawnPoolWorker-11] child process 162068 calling self.run()
+[2026-03-16 20:22:31,167: INFO/SpawnPoolWorker-2] child process 160800 calling self.run()
+[2026-03-16 20:22:31,167: INFO/SpawnPoolWorker-3] child process 142800 calling self.run()
+[2026-03-16 20:22:31,168: INFO/SpawnPoolWorker-1] child process 166756 calling self.run()
+[2026-03-16 20:22:31,168: INFO/SpawnPoolWorker-10] child process 163144 calling self.run()
+[2026-03-16 20:22:31,168: INFO/SpawnPoolWorker-8] child process 150100 calling self.run()
+[2026-03-16 20:22:31,168: INFO/SpawnPoolWorker-4] child process 161164 calling self.run()
+[2026-03-16 20:22:31,168: INFO/SpawnPoolWorker-6] child process 150752 calling self.run()
+[2026-03-16 20:22:31,169: INFO/SpawnPoolWorker-9] child process 166384 calling self.run()
+[2026-03-16 20:22:31,220: INFO/SpawnPoolWorker-13] child process 167148 calling self.run()
+[2026-03-16 20:22:31,274: INFO/SpawnPoolWorker-14] child process 167180 calling self.run()
+[2026-03-16 20:22:31,275: INFO/SpawnPoolWorker-15] child process 167212 calling self.run()
+[2026-03-16 20:22:31,387: INFO/SpawnPoolWorker-12] child process 167048 calling self.run()
+[2026-03-16 20:22:31,473: INFO/SpawnPoolWorker-18] child process 167352 calling self.run()
+[2026-03-16 20:22:31,637: INFO/SpawnPoolWorker-16] child process 167244 calling self.run()
+[2026-03-16 20:22:31,637: INFO/SpawnPoolWorker-17] child process 167280 calling self.run()
+[2026-03-16 20:22:31,727: INFO/SpawnPoolWorker-20] child process 167444 calling self.run()
+[2026-03-16 20:22:31,727: INFO/SpawnPoolWorker-19] child process 167404 calling self.run()
+[2026-03-16 20:22:31,920: INFO/MainProcess] mingle: all alone
+[2026-03-16 20:22:31,940: INFO/MainProcess] celery@Ö±²¥×¨ÓÃ ready.
