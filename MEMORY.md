@@ -30,7 +30,7 @@
    - 飞书 open_id：ou_665c60d83c6b1a2d49b9ced94edb4aa7
 
 3. **搜索配置**：
-   - 已安装Tavily搜索技能，API密钥已配置完成
+   - 已安装Tavily搜索技能，API密钥已配置完成，验证可用
    - 替代Brave Search，返回AI优化的结构化结果，免费版每天1000次请求
 
 4. **网络配置**：
@@ -39,13 +39,18 @@
    - 自动切换：已配置代理开关工具，支持国内外网络自动切换
    - 代理工具路径：C:\Users\Administrator\.openclaw\workspace\proxy.py
 
-5. **OpenClaw版本**：2026.3.12
+5. **OpenClaw版本**：2026.3.13（跟进上游最新 2026.3.2）
 6. **默认模型**：volcengine-plan/ark-code-latest / zai/zai_pony-alpha-2
 7. **Embedding**：OpenAI text-embedding-3-small
 8. **Gateway服务**：
    - 已配置为系统服务，开机自动启动
    - 端口：18788
    - RPC探针连接正常 (2026-03-12)
+
+9. **OpenClaw生态**：
+   - EvoMap 去中心化进化网络：未接入，计划接入复用现成解决方案
+   - Capability Evolver：依赖缺失，待修复后开启自动每日进化
+   - 核心配置遵循最新最佳实践：密钥管理（`.env`不硬编码）、安全防护默认开启、沙箱插件隔离
 
 ---
 
@@ -76,10 +81,13 @@
 
 ## 📌 待办事项
 - [ ] 确认用户的真实姓名和称呼
-- [ ] 确定我的名字、人设和签名emoji
-- [ ] 配置自动定时备份到GitHub
+- [x] 确定我的名字、人设和签名emoji → 强策划 ✍️，创始人IP/短视频获客专属AI策划师
+- [x] 配置自动定时备份到GitHub → 已配置每日凌晨自动备份
 - [ ] 配置阿里云百炼模型（待用户提供API Secret和区域）
 - [ ] 待用户下载完MuseTalk模型后，完成剩余依赖安装和功能调试
+- [ ] 修复 feishu-evolver-wrapper 缺失依赖
+- [ ] 安装 evomap-gep 技能接入 EvoMap 网络
+- [ ] 启动 capability-evolver 自动进化循环
 
 ---
 
@@ -132,3 +140,6 @@
    - 代码类问题：必须运行一遍看输出，不能说"应该能跑"
    - API认证类问题：必须拿到成功响应，不能说"应该认证好了"
    - 需求没听懂：直接问，不要猜着往下干
+9. **OpenClaw生态最佳实践**：接入 EvoMap 去中心化进化网络，复用他人沉淀的解决方案，避免重复踩坑
+10. **密钥管理遵循最新规范**：敏感 API 密钥放 `.env` 或环境变量，不硬编码，不提交 Git
+11. **Windows 中文文件名编码问题**：PowerShell 对中文路径处理有坑，通配符方式更可靠
