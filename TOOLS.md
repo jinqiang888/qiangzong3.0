@@ -44,6 +44,14 @@ Things like:
 - Use cron for recurring research/reporting tasks
 - Enable heartbeat for daily checks and automatic updates
 - Run `openclaw update` periodically to get latest skills
+- **新功能：** 2026.3版支持session自动重置，每日凌晨自动重置会话，保持上下文清爽
+
+### 最新玩法与技巧（2026.3更新）
+1. **多账号飞书配置**：支持同一个飞书开放平台下多个应用在不同频道使用，通过 `channels.feishu.accounts` 配置多账号，指定defaultAccount
+2. **记忆插件体系**：支持 mem0、memory-core、memory-lancedb 多种向量记忆后端，可在 `plugins` 配置启用
+3. **PowerShell换行技巧**：Windows PowerShell中使用 `;` 分隔多条命令，不要使用 `&&`（语法不兼容）
+4. **自我进化监控**：通过 `feishu-evolver-wrapper` + cron watchdog（每10分钟执行 `ensure`）保证进化进程稳定运行
+5. **技能安装**：通过 `clawhub install <skill-name>` 从 ClawHub 安装社区技能
 
 ## Examples
 

@@ -61,4 +61,30 @@
 - First-Seen: 2026-03-17
 - Last-Seen: 2026-03-17
 
+## [LRN-20260321-001] Windows PowerShell 命令分隔符兼容性
+
+**Logged**: 2026-03-21T02:10:00Z
+**Priority**: medium
+**Status**: resolved
+**Area**: config, infra
+
+### Summary
+Windows PowerShell 不支持 `&&` 分隔多条命令，必须使用 `;` 分隔。这会导致多行命令执行失败。
+
+### Details
+之前执行 `cd xxx && node xxx` 报错，PowerShell 语法不支持 `&&` 操作符，必须改用 `cd xxx; node xxx`。
+
+### Suggested Action
+在后续执行多命令时，使用 `;` 代替 `&&`。
+
+### Metadata
+- Source: self-experience
+- Related Files: (dynamic commands)
+- Tags: openclaw, windows, powershell, compatibility
+- See Also: LRN-20260317-001
+- Pattern-Key: openclaw.windows-powershell-command-separator
+- Recurrence-Count: 1
+- First-Seen: 2026-03-21
+- Last-Seen: 2026-03-21
+
 ---
