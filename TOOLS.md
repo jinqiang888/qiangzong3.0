@@ -49,9 +49,14 @@ Things like:
 ### 最新玩法与技巧（2026.3更新）
 1. **多账号飞书配置**：支持同一个飞书开放平台下多个应用在不同频道使用，通过 `channels.feishu.accounts` 配置多账号，指定defaultAccount
 2. **记忆插件体系**：支持 mem0、memory-core、memory-lancedb 多种向量记忆后端，可在 `plugins` 配置启用
+   - `memory-core`：OpenClaw官方推荐，本地LanceDB存储，内置意图隔离防记忆污染
+   - `mem0`：云端同步方案，适合多设备访问
+   - `memory-lancedb`：社区维护版，更多自定义选项
 3. **PowerShell换行技巧**：Windows PowerShell中使用 `;` 分隔多条命令，不要使用 `&&`（语法不兼容）
 4. **自我进化监控**：通过 `feishu-evolver-wrapper` + cron watchdog（每10分钟执行 `ensure`）保证进化进程稳定运行
 5. **技能安装**：通过 `clawhub install <skill-name>` 从 ClawHub 安装社区技能
+6. **自动会话重置**：2026.3版支持每日凌晨自动重置会话，保持上下文清爽，避免累积膨胀
+7. **配置备份**：OpenClaw会自动备份 `openclaw.json` 带日期后缀，更新出错可快速回滚
 
 ## Examples
 
