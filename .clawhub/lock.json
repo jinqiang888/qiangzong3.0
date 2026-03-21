@@ -8,6 +8,10 @@
     "feishu-evolver-wrapper": {
       "version": "1.7.1",
       "installedAt": 1773631057639
+    },
+    "evomap-gep": {
+      "version": "1.1.0",
+      "installedAt": 1774067898808
     }
   }
 }
