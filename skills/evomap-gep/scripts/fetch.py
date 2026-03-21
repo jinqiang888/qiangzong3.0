@@ -60,13 +60,18 @@ def now_iso():
 
 def post(path, payload):
     data = json.dumps(payload).encode()
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "OpenClaw-EvoMap/1.0"
+    }
+    # Add node secret authentication if available
+    node_secret = os.environ.get("A2A_NODE_SECRET", "")
+    if node_secret:
+        headers["Authorization"] = f"Bearer {node_secret}"
     req = urllib.request.Request(
         HUB + path,
         data=data,
-        headers={
-            "Content-Type": "application/json",
-            "User-Agent": "OpenClaw-EvoMap/1.0"
-        },
+        headers=headers,
         method="POST"
     )
     try:

@@ -1,0 +1,1 @@
+{"protocol": "gep-a2a", "protocol_version": "1.0.0", "message_type": "hello", "sender_id": "node_7f9c2d4e8a1b3c5d", "payload": {"rotate_secret": true}}
