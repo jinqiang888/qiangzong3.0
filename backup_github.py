@@ -20,19 +20,40 @@ def run_command(cmd, cwd=None):
         return False, "", str(e)
 
 def sync_directory(src_dir, dest_dir):
-    """同步目录到备份位置"""
+    """同步目录到备份位置，跳过包含秘密信息的文件"""
     import shutil
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
     
+    # 需要跳过的文件和目录模式
+    skip_patterns = [
+        "sessions",
+        ".env",
+        ".env.",
+        ".jsonl",
+        ".DS_Store",
+        "Thumbs.db",
+        ".git",
+        "node_modules"
+    ]
+    
     for item in os.listdir(src_dir):
+        # 检查是否需要跳过该项目
+        if any(pattern in item for pattern in skip_patterns):
+            continue
+            
         s = os.path.join(src_dir, item)
         d = os.path.join(dest_dir, item)
+        
         if os.path.isdir(s):
-            sync_directory(s, d)
+            # 如果是目录，递归同步，但检查是否是需要跳过的目录
+            if "sessions" not in s:
+                sync_directory(s, d)
         else:
-            # 复制文件，覆盖已存在的
-            shutil.copy2(s, d)
+            # 如果是文件，检查是否包含需要跳过的模式
+            if not any(pattern in item for pattern in skip_patterns):
+                # 复制文件，覆盖已存在的
+                shutil.copy2(s, d)
 
 def backup_to_github():
     """备份到GitHub"""

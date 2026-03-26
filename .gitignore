@@ -7,3 +7,19 @@ gateway.cmd
 *.exe
 *.dll
 *.node
+
+# Sensitive files - exclude from backup
+*.jsonl
+*.env
+*.env.*
+.DS_Store
+Thumbs.db
+
+# OpenClaw temporary files
+*.tmp
+*.temp
+*~
+
+# Agent session files that may contain secrets
+.openclaw-backup/agents/*/sessions/
+agents/*/sessions/
