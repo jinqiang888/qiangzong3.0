@@ -22,3 +22,57 @@
 [2026-03-16 20:22:31,727: INFO/SpawnPoolWorker-19] child process 167404 calling self.run()
 [2026-03-16 20:22:31,920: INFO/MainProcess] mingle: all alone
 [2026-03-16 20:22:31,940: INFO/MainProcess] celery@直播专用 ready.
+[2026-03-23 14:53:16,685: ERROR/MainProcess] Process 'SpawnPoolWorker-20' pid:167444 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,742: ERROR/MainProcess] Process 'SpawnPoolWorker-19' pid:167404 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,743: ERROR/MainProcess] Process 'SpawnPoolWorker-18' pid:167352 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,743: ERROR/MainProcess] Process 'SpawnPoolWorker-17' pid:167280 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,743: ERROR/MainProcess] Process 'SpawnPoolWorker-16' pid:167244 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,743: ERROR/MainProcess] Process 'SpawnPoolWorker-15' pid:167212 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,743: ERROR/MainProcess] Process 'SpawnPoolWorker-14' pid:167180 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,770: ERROR/MainProcess] Process 'SpawnPoolWorker-13' pid:167148 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,771: ERROR/MainProcess] Process 'SpawnPoolWorker-12' pid:167048 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,771: ERROR/MainProcess] Process 'SpawnPoolWorker-11' pid:162068 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,771: ERROR/MainProcess] Process 'SpawnPoolWorker-10' pid:163144 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,772: ERROR/MainProcess] Process 'SpawnPoolWorker-9' pid:166384 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:16,772: ERROR/MainProcess] Process 'SpawnPoolWorker-8' pid:150100 exited with 'exitcode 1073807364'
+[2026-03-23 14:53:17,256: ERROR/MainProcess] Thread 'Supervisor' crashed: PermissionError(13, '拒绝访问。', None, 5, None)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\pool.py", line 504, in run
+    return self.body()
+           ~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\pool.py", line 563, in body
+    pool._maintain_pool()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\pool.py", line 1343, in _maintain_pool
+    self._repopulate_pool(joined)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\pool.py", line 1328, in _repopulate_pool
+    self._create_worker_process(self._avail_index())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\pool.py", line 1158, in _create_worker_process
+    w.start()
+    ~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\process.py", line 120, in start
+    self._popen = self._Popen(self)
+                  ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\context.py", line 381, in _Popen
+    return Popen(process_obj)
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\popen_spawn_win32.py", line 81, in __init__
+    reduction.dump(process_obj, to_child)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\reduction.py", line 98, in dump
+    ForkingPickler(file, protocol).dump(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\synchronize.py", line 124, in __getstate__
+    h = context.get_spawning_popen().duplicate_for_child(sl.handle)
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\popen_spawn_win32.py", line 94, in duplicate_for_child
+    return reduction.duplicate(handle, self.sentinel)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\billiard\reduction.py", line 113, in duplicate
+    return _winapi.DuplicateHandle(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        _winapi.GetCurrentProcess(), handle, target_process,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        0, inheritable, _winapi.DUPLICATE_SAME_ACCESS)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 拒绝访问。
