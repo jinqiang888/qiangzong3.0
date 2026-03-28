@@ -1,0 +1,460 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-26T15:50:35.919Z"
+  },
+  "env": {
+    "vars": {
+      "A2A_NODE_ID": "node_3bf668664be0",
+      "A2A_HUB_URL": "https://evomap.ai",
+      "A2A_NODE_SECRET": "a3e633c70e2262f3af948d9f629ddb2ed271be639fcd74b249c8baaf073bf188"
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-21T07:30:01.316Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "volcengine:default": {
+        "provider": "volcengine",
+        "mode": "api_key"
+      },
+      "google:default": {
+        "provider": "google",
+        "mode": "api_key"
+      },
+      "aliyun:default": {
+        "provider": "aliyun",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "openai": {
+        "baseUrl": "https://api.openai.com/v1",
+        "apiKey": "$OPENAI_API_KEY",
+        "models": [
+          {
+            "id": "gpt-4o",
+            "name": "GPT-4o"
+          },
+          {
+            "id": "gpt-4o-mini",
+            "name": "GPT-4o Mini"
+          },
+          {
+            "id": "gpt-3.5-turbo",
+            "name": "GPT-3.5 Turbo"
+          }
+        ]
+      },
+      "siliconflow": {
+        "baseUrl": "https://api.siliconflow.cn/v1",
+        "apiKey": "$SILICONFLOW_API_KEY",
+        "models": [
+          {
+            "id": "deepseek-ai/DeepSeek-V3",
+            "name": "DeepSeek V3"
+          },
+          {
+            "id": "Qwen/Qwen2.5-72B-Instruct",
+            "name": "Qwen2.5 72B"
+          }
+        ]
+      },
+      "volcengine-plan": {
+        "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "apiKey": "bf487caf-46f5-41af-b570-0724f792c07b",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "ark-code-latest",
+            "name": "Ark Code Latest",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "ark-code-latest-32k",
+            "name": "Ark Code Latest 32K",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "ark3.5-long-context",
+            "name": "Ark 3.5 Long Context",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "doubao-seed-code",
+            "name": "Doubao Seed Code",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "glm-4.7",
+            "name": "GLM 4.7 Coding",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "glm-5-turbo",
+            "name": "GLM 5 Turbo",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "volcengine": {
+        "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+        "apiKey": "bf487caf-46f5-41af-b570-0724f792c07b",
+        "models": [
+          {
+            "id": "glm-4-7-251222",
+            "name": "GLM 4.7"
+          },
+          {
+            "id": "doubao-seed-code-preview-251028",
+            "name": "Doubao Seed Code Preview"
+          }
+        ]
+      },
+      "google": {
+        "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+        "apiKey": "$GOOGLE_AI_API_KEY",
+        "models": [
+          {
+            "id": "gemini-3.0-pro",
+            "name": "Gemini 3.0 Pro"
+          },
+          {
+            "id": "gemini-3.0-flash",
+            "name": "Gemini 3.0 Flash"
+          }
+        ]
+      },
+      "zai": {
+        "baseUrl": "https://api.zai.com/v1",
+        "apiKey": "$ZAI_API_KEY",
+        "models": [
+          {
+            "id": "zai_pony-alpha-2",
+            "name": "Pony Alpha 2"
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "volcengine-plan/ark-code-latest"
+      },
+      "models": {
+        "volcengine-plan/ark-code-latest": {},
+        "volcengine-plan/ark-code-latest-32k": {},
+        "volcengine-plan/ark3.5-long-context": {},
+        "volcengine-plan/doubao-seed-code": {},
+        "zai/zai_pony-alpha-2": {},
+        "google/gemini-3.0-pro": {},
+        "google/gemini-3.0-flash": {}
+      },
+      "workspace": "C:\\Users\\Administrator\\.openclaw\\workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "imageMaxDimensionPx": 1200,
+      "sandbox": {
+        "mode": "off"
+      }
+    }
+  },
+  "tools": {
+    "profile": "full"
+  },
+  "bindings": [
+    {
+      "type": "route",
+      "agentId": "qiangzong",
+      "match": {
+        "channel": "feishu",
+        "accountId": "qiangzong"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "qiangcehua",
+      "match": {
+        "channel": "feishu",
+        "accountId": "qiangcehua"
+      }
+    }
+  ],
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer",
+    "reset": {
+      "mode": "daily",
+      "atHour": 4,
+      "idleMinutes": 120
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        },
+        "self-improvement": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "defaultAccount": "qiangzong",
+      "accounts": {
+        "default": {
+          "enabled": true,
+          "appId": "cli_a93ac577ac389ccb",
+          "appSecret": "LusYuR488FkdOaDXNTSRtcjcHX5OaSDk",
+          "connectionMode": "websocket",
+          "domain": "feishu",
+          "groupPolicy": "open",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_01080b390e23107f3ff33904dba77a02",
+            "ou_665c60d83c6b1a2d49b9ced94edb4aa7",
+            "ou_12684d773737fe726e9ebd0f664fa9ab"
+          ],
+          "streaming": true,
+          "footer": {
+            "elapsed": true,
+            "status": true
+          }
+        },
+        "qiangzong": {
+          "enabled": true,
+          "appId": "cli_a93ac577ac389ccb",
+          "appSecret": "LusYuR488FkdOaDXNTSRtcjcHX5OaSDk",
+          "connectionMode": "websocket",
+          "domain": "feishu",
+          "groupPolicy": "open",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_01080b390e23107f3ff33904dba77a02",
+            "ou_665c60d83c6b1a2d49b9ced94edb4aa7",
+            "ou_12684d773737fe726e9ebd0f664fa9ab"
+          ],
+          "streaming": true,
+          "footer": {
+            "elapsed": true,
+            "status": true
+          }
+        },
+        "qiangcehua": {
+          "enabled": true,
+          "appId": "cli_a93c6c21e5f89cb0",
+          "appSecret": "smtZc5KePxJufG0F3NkX8gd7TcLHkWXg",
+          "connectionMode": "websocket",
+          "domain": "feishu",
+          "groupPolicy": "open",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_01080b390e23107f3ff33904dba77a02",
+            "ou_665c60d83c6b1a2d49b9ced94edb4aa7",
+            "ou_12684d773737fe726e9ebd0f664fa9ab"
+          ],
+          "streaming": true,
+          "footer": {
+            "elapsed": true,
+            "status": true
+          }
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18788,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "enabled": true,
+      "allowedOrigins": [
+        "http://localhost:18789",
+        "http://127.0.0.1:18789"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": "098eeec8644238e405b0a97b13fe771619e8bf2f44b92055"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "reload": {
+      "mode": "hybrid",
+      "debounceMs": 300
+    }
+  },
+  "plugins": {
+    "allow": [
+      "feishu",
+      "openclaw-mem0-plugin",
+      "memory-core"
+    ],
+    "slots": {
+      "memory": "memory-core"
+    },
+    "entries": {
+      "feishu": {
+        "enabled": true
+      },
+      "feishu-openclaw-plugin": {
+        "enabled": false
+      },
+      "openclaw-mem0-plugin": {
+        "enabled": false,
+        "config": {
+          "mode": "open-source",
+          "oss": {
+            "vectorStore": {
+              "provider": "chroma",
+              "config": {
+                "collectionName": "memories",
+                "path": "C:\\Users\\Administrator\\.openclaw\\memory\\vector"
+              }
+            }
+          }
+        }
+      },
+      "memory-core": {
+        "enabled": true
+      },
+      "memory-lancedb": {
+        "enabled": false
+      }
+    },
+    "installs": {
+      "feishu": {
+        "source": "npm",
+        "spec": "@openclaw/feishu",
+        "installPath": "C:\\Users\\Administrator\\.openclaw\\extensions\\feishu",
+        "version": "2026.3.7",
+        "resolvedName": "@openclaw/feishu",
+        "resolvedVersion": "2026.3.7",
+        "resolvedSpec": "@openclaw/feishu@2026.3.7",
+        "integrity": "sha512-CHPcL+WHKYR2HJKRYsRtlXx/wbQRy5axltjjH9qXkR8ghxygDmOHZREjxyFEbjFJ3wnIuvgjLE7JYTg3nPpDA==",
+        "shasum": "c4b31dbe2ff0bc7034334873482ad18ac60a0767",
+        "resolvedAt": "2026-03-10T19:51:19.782Z"
+      },
+      "feishu-openclaw-plugin": {
+        "source": "npm",
+        "spec": "@larksuiteoapi/feishu-openclaw-plugin",
+        "installPath": "C:\\Users\\Administrator\\.openclaw\\extensions\\feishu-openclaw-plugin",
+        "version": "2026.3.8",
+        "resolvedName": "@larksuiteoapi/feishu-openclaw-plugin",
+        "resolvedVersion": "2026.3.8",
+        "resolvedSpec": "@larksuiteoapi/feishu-openclaw-plugin@2026.3.8",
+        "integrity": "sha512-77PzCEESdPgqL9jgoV8I3difKOuC/iRiECYLUT+2rLRD1Oy+CHtTXuYwHwztHvbY2sWitev/5rN/TseDHo2FVg==",
+        "resolvedAt": "2026-03-10T20:04:04.395Z"
+      },
+      "openclaw-mem0-plugin": {
+        "source": "npm",
+        "spec": "@xray2016/openclaw-mem0-plugin",
+        "installPath": "C:\\Users\\Administrator\\.openclaw\\extensions\\openclaw-mem0-plugin",
+        "version": "1.0.9",
+        "resolvedName": "@xray2016/openclaw-mem0-plugin",
+        "resolvedVersion": "1.0.9",
+        "resolvedSpec": "@xray2016/openclaw-mem0-plugin@1.0.9",
+        "integrity": "sha512-js9kjHD86ZH0sYUpwj8s1VRTRhx1tlZIm1EYeDH5iDXl++uskd8of5Az1JQloi5EhXw2hf+nGxCJM/YCxOtS0Q==",
+        "resolvedAt": "2026-03-11T16:39:44.543Z"
+      }
+    }
+  }
+}
