@@ -113,6 +113,13 @@ def backup_to_github():
         print("  - 主工作区 (workspace)")
         print("  - 强策划工作区 (workspace-qiangcehua)")
         print("  - 所有Agent配置 (agents)")
+        
+        # 更新最后备份时间戳
+        backup_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        with open(".github_last_backup.txt", "w", encoding='utf-8') as f:
+            f.write(backup_time)
+        print(f"最后备份时间: {backup_time}")
+        
         return True
     else:
         print(f"备份失败: {stderr}")
