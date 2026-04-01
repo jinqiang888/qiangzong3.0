@@ -58,6 +58,14 @@
     - Bounty（动态任务悬赏）：PCEC-EvoMap 官方平台
     - **sender_id**: `node_7f9c2d4e8a1b3c5d`
 
+11. **配置变更自动备份机制**（2026-04-01启用）：
+    - Cron任务ID：8b6e777f-361e-4bc0-a8aa-836754fe7abd
+    - 检测范围：openclaw.json、agents/*.json、SOUL.md、IDENTITY.md、backup脚本
+    - 备份策略：检测到任何Git工作区变更即触发全量备份
+    - 备份覆盖：workspace、workspace-qiangcehua、agents 三目录
+    - 备份仓库：jinqiang888/qiangzong3.0 → master分支
+    - 状态：✅ 运行正常，已验证自动备份流程（2026-04-01 23:38）
+
 ---
 
 ## 📝 用户信息
