@@ -4,5 +4,10 @@
     "calendar": null,
     "weather": null,
     "email": null
+  },
+  "dailyChecks": {
+    "2026-04-02": {
+      "backup_reminded": true
+    }
   }
 }
