@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-04-01T15:42:02.119056",
+  "backup_dir": "C:\\Users\\Administrator\\.openclaw\\workspace\\backups\\github\\2026-04-01",
+  "files_backed": [
+    "openclaw.json",
+    "SOUL.md",
+    "IDENTITY.md",
+    "USER.md",
+    "AGENTS.md",
+    "TOOLS.md",
+    "MEMORY.md",
+    "backup_github.py"
+  ],
+  "dirs_backed": [
+    "agents",
+    "skills"
+  ],
+  "git_commit": true,
+  "git_push": true
+}
