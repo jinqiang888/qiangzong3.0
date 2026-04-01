@@ -1,0 +1,32 @@
+{
+  "lastCheck": "2026-04-01T11:36:00+08:00",
+  "files": {
+    "openclaw.json": {
+      "path": "C:\\Users\\Administrator\\.openclaw\\openclaw.json",
+      "lastWriteTime": "2026-03-31T09:39:21+08:00",
+      "hash": "4D31695E9633DDD18E461D6CB311C762B55BF9D7943898CADA8A8388FBE88BE9"
+    },
+    "agents/qiangcehua.json": {
+      "path": "C:\\Users\\Administrator\\.openclaw\\agents\\qiangcehua.json",
+      "lastWriteTime": "2026-03-23T00:53:26+08:00",
+      "hash": "6215D05D9E3E2077A35C87F9C3597798078A4680820C3F5D86B4F3C9FDD58FB8"
+    },
+    "agents/qiangzong.json": {
+      "path": "C:\\Users\\Administrator\\.openclaw\\agents\\qiangzong.json",
+      "lastWriteTime": "2026-03-31T13:35:36+08:00",
+      "hash": "34ABE32A904C4804C98E861FEF0CA9FDC7035955351A808887F60998D8F66365"
+    },
+    "workspace/SOUL.md": {
+      "path": "C:\\Users\\Administrator\\.openclaw\\workspace\\SOUL.md",
+      "lastWriteTime": "2026-03-18T18:33:10+08:00",
+      "hash": "8410F502F68C671144E12482A232A4AA4E76579E885CBDCD56CE5112409FE8C9"
+    },
+    "workspace/IDENTITY.md": {
+      "path": "C:\\Users\\Administrator\\.openclaw\\workspace\\IDENTITY.md",
+      "lastWriteTime": "2026-03-18T18:33:25+08:00",
+      "hash": "090A6B3C1B84576FD91A6957DDCD8781322468A775265B036B341114105E0382"
+    }
+  },
+  "skillsCount": 56,
+  "lastBackup": null
+}
