@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 OpenClaw配置自动备份脚本
-将关键配置文件备份 GitHub
+将关键配置文件备份到GitHub（排除敏感信息）
 """
 
 import os
@@ -10,6 +10,7 @@ import sys
 import json
 import subprocess
 import shutil
+import re
 from pathlib import Path
 from datetime import datetime
 
@@ -37,14 +38,68 @@ FILES_TO_BACKUP = [
     "backup_github.py",
 ]
 
-# 需要备份的目录列表（完整内容，但排除 node_modules）
+# 需要备份的目录列表
 DIRS_TO_BACKUP = [
     "agents",
     "skills",
 ]
 
+# 敏感词模式（用于检测和替换）
+SECRET_PATTERNS = [
+    r'["\']?api[_-]?key["\']?\s*[:=]\s*["\']?[a-zA-Z0-9_-]{20,}["\']?',
+    r'["\']?token["\']?\s*[:=]\s*["\']?[a-zA-Z0-9_-]{20,}["\']?',
+    r'["\']?secret["\']?\s*[:=]\s*["\']?[a-zA-Z0-9_-]{20,}["\']?',
+    r'["\']?password["\']?\s*[:=]\s*["\']?[a-zA-Z0-9_-]{10,}["\']?',
+    r'sk-[a-zA-Z0-9]{48}',  # OpenAI API key
+    r'Bearer [a-zA-Z0-9_-]{20,}',
+    r'ghp_[a-zA-Z0-9]{36}',  # GitHub personal access token
+]
+
 # 备份目录
 BACKUP_DIR.mkdir(parents=True, exist_ok=True)
+
+def redact_secrets(content):
+    """检测并替换敏感情息"""
+    if not isinstance(content, str):
+        return content
+
+    for pattern in SECRET_PATTERNS:
+        content = re.sub(pattern, '[REDACTED_SECRET]', content, flags=re.IGNORECASE)
+    return content
+
+def is_safe_to_backup(filepath):
+    """检查文件是否包含敏感情息"""
+    try:
+        # 跳过二进制文件和非常大的文件
+        if not filepath.is_file():
+            return True
+
+        # 跳过已知敏感情文件类型
+        skip_patterns = ['.key', '.pem', '.crt', '.der', '.p12', '.pfx']
+        if any(filepath.suffix.lower() in skip_patterns):
+            return False
+
+        # 跳过文件名包含敏感情词的文件
+        skip_keywords = ['secret', 'key', 'password', 'token', 'credential']
+        if any(keyword.lower() in filepath.name.lower() for keyword in skip_keywords):
+            return False
+
+        # 对于文本文件，检查内容
+        try:
+            with open(filepath, as f):
+                content = f.read()
+            # 检查是否包含API密钥等敏感情模式
+            for pattern in SECRET_PATTERNS:
+                if re.search(pattern, content, flags=re.IGNORECASE):
+                    print(f"  ⚠️  跳过包含敏感情息的文件: {filepath.name}")
+                    return False
+        except:
+            # 如果无法读取，假设不安全
+            return False
+
+        return True
+    except:
+        return False
 
 def copy_file_to_backup(file_path, dest_dir):
     """复制单个文件到备份目录"""
@@ -53,41 +108,48 @@ def copy_file_to_backup(file_path, dest_dir):
         print(f"  ⚠️  文件不存在: {file_path}")
         return False
 
-    dest = dest_dir / file_path
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(src, dest)
-    print(f"  ✅ 已备份: {file_path}")
-    return True
-
-def copy_dir_with_exclude(src, dest, exclude_dirs=None):
-    """复制目录，排除指定子目录"""
-    if not src.exists() or not src.is_dir():
+    # 检查是否安全
+    if not is_safe_to_backup(src):
+        print(f"  🔒 跳过敏感情文件: {file_path}")
         return False
 
+    dest = dest_dir / file_path
+    dest.parent.mkdir(parents=True, exist_ok=True)
+
+    # 如果是JSON文件，先清理敏感情息
+    if src.suffix.lower() == '.json':
+        try:
+            with open(src, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+            # 清理敏感情息
+            cleaned_content = redact_secrets(content)
+            with open(dest, 'w', encoding='utf-8') as f:
+                f.write(cleaned_content)
+            print(f"  ✅ 已备份（已清理）: {file_path}")
+            return True
+        except Exception as e:
+            print(f"  ⚠️  处理JSON失败: {file_path} - {e}")
+            return False
+    else:
+        shutil.copy2(src, dest)
+        print(f"  ✅ 已备份: {file_path}")
+        return True
+
+def copy_dir_with_exclude(src, dest, exclude_dirs=None):
+    """复制目录（递归），排除指定子目录和敏感情文件"""
+    if not src.exists() or not src.is_dir():
+        return 0, 0
+
     # 默认排除的目录
-    excluded = {'.git', 'node_modules', '__pycache__'}
+    excluded = {'.git', 'node_modules', '__pycache__', 'sessions', '.openclaw-backup'}
     if exclude_dirs:
         excluded.update(exclude_dirs)
 
-    # 删除目标目录中排除的目录（如果存在）
+    # 删除目标目录（如果存在）
     if dest.exists():
         try:
-            # 先删除排除的目录以避免权限问题
-            for item in dest.iterdir():
-                if item.name in excluded:
-                    try:
-                        if item.is_dir():
-                            shutil.rmtree(item)
-                        else:
-                            item.unlink()
-                    except (PermissionError, OSError) as e:
-                        # 忽略删除错误，后续会被覆盖
-                        pass
-            
-            # 删除目标目录（现在应该可以了）
             shutil.rmtree(dest)
         except (PermissionError, OSError) as e:
-            # 如果还是失败，尝试逐个删除文件
             try:
                 for item in dest.iterdir():
                     if item.name not in excluded:
@@ -101,22 +163,52 @@ def copy_dir_with_exclude(src, dest, exclude_dirs=None):
             except:
                 pass
 
-    # 手动复制，排除指定目录
+    dest.mkdir(parents=True, exist_ok=True)
+
+    copied_count = 0
+    skipped_count = 0
+
+    # 手动复制，排除指定目录和敏感情文件
     for item in src.iterdir():
+        # 直接排除 sessions 目录
+        if item.name == 'sessions':
+            skipped_count += 1
+            continue
+
         if item.name in excluded:
+            skipped_count += 1
+            continue
+
+        # 跳过敏感情文件
+        if item.is_file() and not is_safe_to_backup(item):
+            skipped_count += 1
             continue
 
         dest_item = dest / item.name
         if item.is_dir():
-            dest_item.mkdir(parents=True, exist_ok=True)
             # 递归复制子目录
-            copy_dir_with_exclude(item, dest_item, exclude_dirs=list(excluded))
+            sub_copkted, sub_skipped = copy_dir_with_exclude(item, dest_item, exclude_dirs=list(excluded))
+            copied_count += sub_copied
+            skipped_count += sub_skipped
         else:
             dest_item.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(item, dest_item)
+            # 如果是JSON文件，先清理敏感情息
+            if item.suffix.lower() == '.json':
+                try:
+                    with open(item, 'r', encoding='utf-8', errors='ignore') as f:
+                        content = f.read()
+                    cleaned_content = redact_secrets(content)
+                    with open(dest_item, 'w', encoding='utf-8') as f:
+                        f.write(cleaned_content)
+                    copied_count += 1
+                except:
+                    pass
+            else:
+                shutil.copy2(item, dest_item)
+                copied_count += 1
 
-    print(f"  ✅ 已备份目录: {src.name}")
-    return True
+    print(f"  ✅ 已备份目录: {src.name} (已复制{copied_count}个文件, 跳过{skipped_count}个)")
+    return copied_count, skipped_count
 
 def check_git_repo():
     """检查是否是git仓库"""
@@ -177,9 +269,19 @@ desktop.ini
 # 临时文件
 tmp/
 temp/
+
+# OpenClaw 会话和敏感情据（跳过所有jsonl文件）
+**/*.jsonl
+**/*.jsonl.*
+
+# OpenClaw 备份目录
+/.openclaw-backup/
+
+# agents 下的所有 sessions 目录
+**/agents/*/sessions/**
 """
 
-    with open(gitignore, "w", encoding="utf-8") as f:
+    with open(gitignore, "w", encoding='utf-8') as f:
         f.write(gitignore_content)
 
     print("  ✅ Git仓库已初始化")
@@ -197,7 +299,7 @@ def git_commit():
     )
 
     if not status_result.stdout.strip():
-        print("  ⚠️  没有倒新需要提交")
+        print("  ⚠️  没有新内容需要提交")
         return False
 
     commit_msg = f"配置自动备份 - {TIMESTAMP}"
@@ -227,7 +329,7 @@ def get_current_branch():
         )
         return result.stdout.strip()
     except:
-        return "master"  # 默认返回master
+        return "master"
 
 def git_push():
     """推送到GitHub"""
@@ -252,7 +354,7 @@ def git_push():
         print("     git remote add origin <你的GitHub仓库URL>")
         return False
 
-    # 尝试推送（使用当前分支而不是硬编码main）
+    # 尝试推送
     try:
         subprocess.run(
             ["git", "push", "origin", branch],
@@ -289,11 +391,16 @@ def main():
 
     # 3. 备份目录
     print("\n📁 备份配置目录...")
+    total_copied = 0
+    total_skipped = 0
     for dir_name in DIRS_TO_BACKUP:
         src = OPENCLAW_DIR / dir_name
         dest = today_backup / dir_name
-        if not copy_dir_with_exclude(src, dest):
-            backup_success = False
+        copied, skipped = copy_dir_with_exclude(src, dest)
+        total_copied += copied
+        total_skipped += skipped
+
+    print(f"\n📊 备份统计: 复制{total_copied}个文件, 跳过{total_skipped}个文件")
 
     if not backup_success:
         print("\n⚠️  部分文件/目录备份失败，但继续执行Git操作")
@@ -317,11 +424,15 @@ def main():
         "files_backed": FILES_TO_BACKUP,
         "dirs_backed": DIRS_TO_BACKUP,
         "git_commit": committed,
-        "git_push": push_result if committed else None
+        "git_push": push_result if committed else None,
+        "statistics": {
+            "copied_files": total_copied,
+            "skipped_files": total_skipped
+        }
     }
 
     report_file = BACKUP_DIR / f"report_{TIMESTAMP}.json"
-    with open(report_file, "w", encoding="utf-8") as f:
+    with open(report_file, "w", encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
     print(f"\n✅ 备份报告已保存: {report_file}")

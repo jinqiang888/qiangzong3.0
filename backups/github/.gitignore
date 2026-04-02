@@ -1,0 +1,50 @@
+# Node modules - 不需要备份
+**/node_modules/
+node_modules/
+
+# NPM 缓存
+.npm/
+package-lock.json
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 备份文件
+*.bak
+*.backup
+*.swp
+*.tmp
+*~
+
+# 日志
+*.log
+logs/
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 临时文件
+tmp/
+temp/
+
+# OpenClaw 会话和敏感数据（跳过所有jsonl文件）
+**/*.jsonl
+**/*.jsonl.*
+
+# OpenClaw 备份目录
+/.openclaw-backup/
+
+# agents 下的所有 sessions 目录
+**/agents/*/sessions/**
