@@ -2,7 +2,7 @@
   "id": "qiangcehua",
   "name": "强策划",
   "model": {
-    "primary": "volcengine-plan/doubao-seed-code"
+    "primary": "volcengine-plan/ark-code-latest"
   },
   "workspace": "C:\\Users\\Administrator\\.openclaw\\workspace-qiangcehua",
   "enabled": true

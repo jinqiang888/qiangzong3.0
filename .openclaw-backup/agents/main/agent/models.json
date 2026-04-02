@@ -127,23 +127,6 @@
           },
           "contextWindow": 200000,
           "maxTokens": 8192
-        },
-        {
-          "id": "glm-4.7",
-          "name": "GLM 5 Turbo",
-          "api": "openai-completions",
-          "reasoning": false,
-          "input": [
-            "text"
-          ],
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "contextWindow": 200000,
-          "maxTokens": 8192
         }
       ],
       "apiKey": "bf487caf-46f5-41af-b570-0724f792c07b"
