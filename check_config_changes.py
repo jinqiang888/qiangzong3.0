@@ -168,9 +168,9 @@ def check_changes():
                 "reason": f"修改时间变化"
             })
 
-    # 检查删除的文件
+    # 检查删除的文件（跳过sessions）
     for filepath in old_timestamps:
-        if filepath not in current_timestamps:
+        if filepath not in current_timestamps and 'sessions' not in filepath:
             changed_files.append({
                 "file": filepath,
                 "type": "删除",
