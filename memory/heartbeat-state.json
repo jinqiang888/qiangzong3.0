@@ -1,6 +1,6 @@
 {
   "lastChecks": {
-    "backup": 1775051200,
+    "backup": 1775178227,
     "calendar": null,
     "weather": null,
     "email": null
@@ -16,7 +16,7 @@
       "backup_reminded": true,
       "backup_confirmed": true,
       "last_backup": "2026-04-03 00:40",
-      "heartbeat_checked": "2026-04-03 00:40"
+      "heartbeat_checked": "2026-04-03 01:02"
     }
   }
 }
