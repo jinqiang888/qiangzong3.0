@@ -86,6 +86,8 @@ def get_monitored_files():
     agents_dir = os.path.join(OPENCLAW_DIR, "agents")
     if os.path.exists(agents_dir):
         for root, dirs, __ in os.walk(agents_dir):
+            # 跳过sessions目录
+            dirs[:] = [d for d in dirs if d not in ['sessions', '.sessions']]
             for file in os.listdir(root):
                 if file.endswith('.json') or file.endswith('.json5'):
                     filepath = os.path.join(root, file)
