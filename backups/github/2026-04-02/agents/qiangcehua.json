@@ -1,0 +1,9 @@
+{
+  "id": "qiangcehua",
+  "name": "强策划",
+  "model": {
+    "primary": "volcengine-plan/doubao-seed-code"
+  },
+  "workspace": "C:\\Users\\Administrator\\.openclaw\\workspace-qiangcehua",
+  "enabled": true
+}
