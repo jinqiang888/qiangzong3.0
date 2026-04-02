@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "capsules": [
+    {
+      "type": "Capsule",
+      "schema_version": "1.5.0",
+      "id": "capsule_1770477654236",
+      "trigger": [
+        "log_error",
+        "errsig:**TOOLRESULT**: { \"status\": \"error\", \"tool\": \"exec\", \"error\": \"error: unknown command 'process'\\n\\nCommand exited with code 1\" }",
+        "user_missing",
+        "windows_shell_incompatible",
+        "perf_bottleneck"
+      ],
+      "gene": "gene_gep_repair_from_errors",
+      "summary": "固化：gene_gep_repair_from_errors 命中信号 log_error, errsig:**TOOLRESULT**: { \"status\": \"error\", \"tool\": \"exec\", \"error\": \"error: unknown command 'process'\\n\\nCommand exited with code 1\" }, user_missing, windows_shell_incompatible, perf_bottleneck，变更 1 文件 / 2 行。",
+      "confidence": 0.85,
+      "blast_radius": {
+        "files": 1,
+        "lines": 2
+      },
+      "outcome": {
+        "status": "success",
+        "score": 0.85
+      },
+      "success_streak": 1,
+      "env_fingerprint": {
+        "node_version": "v22.22.0",
+        "platform": "linux",
+        "arch": "x64",
+        "os_release": "6.1.0-42-cloud-amd64",
+        "evolver_version": "1.7.0",
+        "cwd": ".",
+        "captured_at": "2026-02-07T15:20:54.155Z"
+      },
+      "a2a": {
+        "eligible_to_broadcast": false
+      },
+      "asset_id": "sha256:3eed0cd5038f9e85fbe0d093890e291e9b8725644c766e6cce40bf62d0f5a2e8"
+    },
+    {
+      "type": "Capsule",
+      "schema_version": "1.5.0",
+      "id": "capsule_1770478341769",
+      "trigger": [
+        "log_error",
+        "errsig:**TOOLRESULT**: { \"status\": \"error\", \"tool\": \"exec\", \"error\": \"error: unknown command 'process'\\n\\nCommand exited with code 1\" }",
+        "user_missing",
+        "windows_shell_incompatible",
+        "perf_bottleneck"
+      ],
+      "gene": "gene_gep_repair_from_errors",
+      "summary": "固化：gene_gep_repair_from_errors 命中信号 log_error, errsig:**TOOLRESULT**: { \"status\": \"error\", \"tool\": \"exec\", \"error\": \"error: unknown command 'process'\\n\\nCommand exited with code 1\" }, user_missing, windows_shell_incompatible, perf_bottleneck，变更 2 文件 / 44 行。",
+      "confidence": 0.85,
+      "blast_radius": {
+        "files": 2,
+        "lines": 44
+      },
+      "outcome": {
+        "status": "success",
+        "score": 0.85
+      },
+      "success_streak": 1,
+      "env_fingerprint": {
+        "node_version": "v22.22.0",
+        "platform": "linux",
+        "arch": "x64",
+        "os_release": "6.1.0-42-cloud-amd64",
+        "evolver_version": "1.7.0",
+        "cwd": ".",
+        "captured_at": "2026-02-07T15:32:21.678Z"
+      },
+      "a2a": {
+        "eligible_to_broadcast": false
+      },
+      "asset_id": "sha256:20d971a3c4cb2b75f9c045376d1aa003361c12a6b89a4b47b7e81dbd4f4d8fe8"
+    },
+    {
+      "type": "Capsule",
+      "schema_version": "1.6.0",
+      "id": "capsule_1773290741694",
+      "trigger": [
+        "stable_success_plateau"
+      ],
+      "gene": "gene_gep_innovate_from_opportunity",
+      "summary": "Configured EvoMap evolver environment, linked to OpenClaw memory system, completed first successful run",
+      "confidence": 0.85,
+      "blast_radius": {
+        "files": 0,
+        "lines": 0
+      },
+      "outcome": {
+        "status": "success",
+        "score": 0.85
+      },
+      "success_streak": 1,
+      "success_reason": "Gene gene_gep_innovate_from_opportunity (innovate) matched signals [stable_success_plateau]. Scope: 0 file(s), 0 line(s) changed. Outcome score: 0.85. Strategy applied: Extract opportunity signals and identify the specific user need or system gap; Search existing Genes and Capsules for partial matches (avoid reinventing); Design a minimal, testable implementation plan (prefer small increments).",
+      "env_fingerprint": {
+        "device_id": "7a331d71f1088eef63b8d0b5c4de097e",
+        "node_version": "v24.13.0",
+        "platform": "win32",
+        "arch": "x64",
+        "os_release": "10.0.22631",
+        "hostname": "e1b7a93cb105",
+        "evolver_version": "1.29.4",
+        "client": "evolver",
+        "client_version": "1.29.4",
+        "cwd": "61dc1d8053b7",
+        "container": false
+      },
+      "source_type": "generated",
+      "reused_asset_id": null,
+      "a2a": {
+        "eligible_to_broadcast": false
+      },
+      "content": "Intent: optimize\n\nGene: gene_gep_innovate_from_opportunity (innovate)\n\nSignals: stable_success_plateau\n\nStrategy:\n1. Extract opportunity signals and identify the specific user need or system gap\n2. Search existing Genes and Capsules for partial matches (avoid reinventing)\n3. Design a minimal, testable implementation plan (prefer small increments)\n4. Estimate blast radius; innovate changes may touch more files but must stay within constraints\n5. Implement the change with clear validation criteria\n6. Validate using declared validation steps; rollback on failure\n7. Solidify: record EvolutionEvent with intent=innovate, create new Gene if pattern is novel, create Capsule on success\n\nScope: 0 file(s), 0 line(s)\n\nOutcome score: 0.85",
+      "strategy": [
+        "Extract opportunity signals and identify the specific user need or system gap",
+        "Search existing Genes and Capsules for partial matches (avoid reinventing)",
+        "Design a minimal, testable implementation plan (prefer small increments)",
+        "Estimate blast radius; innovate changes may touch more files but must stay within constraints",
+        "Implement the change with clear validation criteria",
+        "Validate using declared validation steps; rollback on failure",
+        "Solidify: record EvolutionEvent with intent=innovate, create new Gene if pattern is novel, create Capsule on success"
+      ],
+      "asset_id": "sha256:a8c2defa40806429741bbc145c7c913f1c49d11447435b982cf59529a9194f21"
+    }
+  ]
+}
