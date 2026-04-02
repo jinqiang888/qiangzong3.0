@@ -115,7 +115,12 @@ def get_monitored_files():
     for skills_dir in skills_dirs:
         if os.path.exists(skills_dir):
             for root, dirs, skill_files in os.walk(skills_dir):
+                # 跳过node_modules和.git目录
+                dirs[:] = [d for d in dirs if d not in ['node_modules', '.git', '__pycache__']]
                 for file in skill_files:
+                    # 跳过.pyc文件
+                    if file.endswith('.pyc'):
+                        continue
                     filepath = os.path.join(root, file)
                     rel_path = os.path.relpath(filepath, OPENCLAW_DIR)
                     files[filepath] = rel_path
