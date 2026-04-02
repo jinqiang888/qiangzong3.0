@@ -195,12 +195,12 @@ def main():
     has_changes, changed_files = check_changes()
 
     if has_changes:
-        print("\n📦 需要执行备份到GitHub")
+        print("\n需要执行备份到GitHub")
         # 可以在这里调用备份脚本
         # run_command("python backup_github.py", WORKSPACE_DIR)
         return True, changed_files
     else:
-        print("\n✅ 无需备份")
+        print("\n无需备份")
         return False, []
 
 if __name__ == "__main__":
