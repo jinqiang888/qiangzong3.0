@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-02 22:47:28",
+  "last_check": "2026-04-02 22:47:56",
   "file_timestamps": {
     "C:\\Users\\Administrator\\.openclaw\\openclaw.json": 1775133437.2332683,
     "C:\\Users\\Administrator\\.openclaw\\agents\\qiangcehua.json": 1775133133.7695835,
@@ -234,5 +234,6 @@
     "C:\\Users\\Administrator\\.openclaw\\skills\\paddleocr-text-recognition\\scripts\\ocr_caller.py": 1773554649.794101,
     "C:\\Users\\Administrator\\.openclaw\\skills\\paddleocr-text-recognition\\scripts\\requirements.txt": 1773554649.795101,
     "C:\\Users\\Administrator\\.openclaw\\skills\\paddleocr-text-recognition\\scripts\\smoke_test.py": 1773554649.795101
-  }
+  },
+  "last_backup": null
 }
