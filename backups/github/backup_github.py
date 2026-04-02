@@ -86,7 +86,7 @@ def is_safe_to_backup(filepath):
 
         # 对于文本文件，检查内容
         try:
-            with open(filepath, as f):
+            with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
             # 检查是否包含API密钥等敏感情模式
             for pattern in SECRET_PATTERNS:
@@ -187,7 +187,7 @@ def copy_dir_with_exclude(src, dest, exclude_dirs=None):
         dest_item = dest / item.name
         if item.is_dir():
             # 递归复制子目录
-            sub_copkted, sub_skipped = copy_dir_with_exclude(item, dest_item, exclude_dirs=list(excluded))
+            sub_copied, sub_skipped = copy_dir_with_exclude(item, dest_item, exclude_dirs=list(excluded))
             copied_count += sub_copied
             skipped_count += sub_skipped
         else:

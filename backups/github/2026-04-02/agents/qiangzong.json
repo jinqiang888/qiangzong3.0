@@ -1,9 +1,0 @@
-{
-  "id": "qiangzong",
-  "name": "强总",
-  "model": {
-    "primary": "volcengine-plan/ark-code-latest"
-  },
-  "workspace": "C:\\Users\\Administrator\\.openclaw\\workspace-qiangzong",
-  "enabled": true
-}
