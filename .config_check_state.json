@@ -1,11 +1,11 @@
 {
-  "last_check": "2026-04-02 22:43:05",
+  "last_check": "2026-04-02 22:45:12",
   "file_timestamps": {
     "C:\\Users\\Administrator\\.openclaw\\openclaw.json": 1775133437.2332683,
     "C:\\Users\\Administrator\\.openclaw\\agents\\qiangcehua.json": 1775133133.7695835,
     "C:\\Users\\Administrator\\.openclaw\\agents\\qiangzong.json": 1774935336.5115478,
     "C:\\Users\\Administrator\\.openclaw\\agents\\main\\agent\\auth-profiles.json": 1775140807.7069185,
-    "C:\\Users\\Administrator\\.openclaw\\agents\\main\\agent\\models.json": 1775140571.8348165,
+    "C:\\Users\\Administrator\\.openclaw\\agents\\main\\agent\\models.json": 1775141000.2091794,
     "C:\\Users\\Administrator\\.openclaw\\agents\\qiangcehua\\agent\\auth-profiles.json": 1774694419.3817277,
     "C:\\Users\\Administrator\\.openclaw\\agents\\qiangcehua\\agent\\models.json": 1775133141.7388895,
     "C:\\Users\\Administrator\\.openclaw\\agents\\qiangzong\\agent\\agent.json": 1774198415.8787825,
@@ -290,5 +290,6 @@
     "C:\\Users\\Administrator\\.openclaw\\skills\\paddleocr-text-recognition\\scripts\\requirements.txt": 1773554649.795101,
     "C:\\Users\\Administrator\\.openclaw\\skills\\paddleocr-text-recognition\\scripts\\smoke_test.py": 1773554649.795101,
     "C:\\Users\\Administrator\\.openclaw\\skills\\paddleocr-text-recognition\\scripts\\__pycache__\\lib.cpython-313.pyc": 1773554739.3966289
-  }
+  },
+  "last_backup": "2026-04-02 22:44:08"
 }
