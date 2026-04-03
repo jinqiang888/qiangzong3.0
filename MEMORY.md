@@ -172,3 +172,10 @@
 14. **大文件/模型下载策略更新**：国内网络环境下优先提供直接下载链接，让用户用浏览器/迅雷等工具下载，避免在命令行下折腾被墙的站点，浪费时间
 15. **绝对禁止模拟执行任务**：所有用户要求的操作必须真实落地执行，禁止只回复不干活的假执行，发现一次记一次大过
 16. **配置变更自动备份机制**：检测到Git工作区任何变更都会自动触发全量备份，确保配置和记忆实时同步
+17. **火山引擎模型配置关键修复**（2026-04-03）：
+    - 问题：`glm-5-turbo` 不支持 Coding Plan 功能，导致404错误
+    - 根本原因：配置中存在错误的 `volcengine` provider（普通endpoint），与正确的 `volcengine-plan`（Coding专用）冲突
+    - 解决方案：删除错误的 `volcengine` provider，只保留 `volcengine-plan`
+    - 正确的Coding Plan模型列表：ark-code-latest、ark-code-latest-32k、ark3.5-long-context、doubao-seed-code、glm-4.7
+    - 错误的endpoint：`https://ark.cn-beijing.volces.com/api/v3`
+    - 正确的endpoint：`https://ark.cn-beijing.volces.com/api/coding/v3`
