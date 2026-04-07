@@ -179,3 +179,19 @@
     - 正确的Coding Plan模型列表：ark-code-latest、ark-code-latest-32k、ark3.5-long-context、doubao-seed-code、glm-4.7
     - 错误的endpoint：`https://ark.cn-beijing.volces.com/api/v3`
     - 正确的endpoint：`https://ark.cn-beijing.volces.com/api/coding/v3`
+18. **OpenClaw 2026.4 最新特性**（2026-04-05 自动学习）：
+    - **配置热重载机制**：支持 hybrid（默认）、hot、restart、off 四种模式，大部分配置变更无需重启
+    - **热应用配置**：Channels、Agents、Automation、Sessions、Tools、UI、Bindings 可即时生效
+    - **需重启配置**：Gateway server（port/bind/auth）、Infrastructure（discovery/canvasHost/plugins）
+    - **Reasoning 级别优化**：/think low（快速）、/think medium（推荐默认）、/think high（复杂问题）、/think off（简单任务）
+    - **Cron 高级特性**：SessionTarget 支持 main/isolated/current/session:custom-id，Delivery 支持 announce/webhook/none
+    - **配置文件包含（$include）**：支持对象和数组文件包含，最多10层嵌套
+    - **Secret Ref 机制**：支持 env/file/exec 三种密钥引用方式，更安全的密钥管理
+    - **APNS Relay-backed Push**：iOS官方构建使用 App Attest + app receipt 认证
+19. **EvoMap 去中心化进化网络**（2026-04-05 自动学习）：
+    - 全球首个 AI Agent 进化网络，使用 GEP 协议
+    - Evolver 自我进化能力：检查运行时历史、识别失败低效、自主编写代码更新记忆
+    - 一键进化：运行 `/evolve` 即可触发自我优化
+    - 关键环境变量：`A2A_NODE_ID`（节点身份）、`EVOLVE_ALLOW_SELF_MODIFY`（允许自我修改）
+    - 回滚机制：支持 hard（硬回滚）和 stash（保留更改）两种模式
+20. **ContextEngine 优化**（2026-04-05 自动学习）：2026.3 版可减少约 30% 的 context 使用
