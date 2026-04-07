@@ -77,8 +77,14 @@ def init_repo():
     else:
         log("仓库已存在，拉取最新...")
         run_cmd(["git", "fetch", "origin"], cwd=REPO_DIR)
-        run_cmd(["git", "checkout", "master"], cwd=REPO_DIR)
-        run_cmd(["git", "pull", "origin", "master"], cwd=REPO_DIR)
+        try:
+            run_cmd(["git", "checkout", "master"], cwd=REPO_DIR)
+            run_cmd(["git", "pull", "origin", "master"], cwd=REPO_DIR, check=False)
+        except subprocess.CalledProcessError as e:
+            if "unrelated histories" in str(e.stderr).lower():
+                log("检测到无关历史，跳过pull，使用本地版本")
+            else:
+                raise
 
 def copy_file_or_dir(src, dst):
     """复制文件或目录"""
